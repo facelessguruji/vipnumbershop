@@ -3,35 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <title>User Profile - VIP Numbers</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal.css">
 </head>
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="top-bar-left">
-            <i class="fas fa-phone-volume"></i> VIP Numbers Shop - Premium Fancy Numbers
+        <div class="top-bar-left"> VIP Numbers Shop - Premium Fancy Numbers
         </div>
-        <div class="top-bar-right">
-            <span>🇧🇩 BDT</span>
-            <span>🇮🇳 ₹</span>
-            <span>💳 UPI</span>
-        </div>
+        <div class="top-bar-right"><span>STATIC DEMO · SAMPLE DATA</span></div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar user-nav">
-        <div class="logo">
-            <i class="fas fa-phone-volume"></i> VIP Numbers
-        </div>
+        <a class="logo" href="../index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="user/dashboard.html">Dashboard</a></li>
-            <li><a href="user/browse.html">Browse Numbers</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="browse.html">Browse Numbers</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="user/logout.html" class="btn-login">Logout</a>
+            <a href="login.html" class="btn-login">Sign in</a>
         </div>
     </nav>
 
@@ -39,11 +36,10 @@
         <div class="dashboard">
             <h2>User Profile</h2>
             
-            <div class="flash-message success" style="background: #d4edda; border-color: #c3e6cb;">
-                <i class="fas fa-user"></i> Manage your account details below
+            <div class="flash-message success" style="background: #d4edda; border-color: #c3e6cb;"> Account settings preview. Changes are not saved.
             </div>
 
-            <form action="/profile" method="POST" style="max-width: 600px; margin: 0 auto; padding: 2rem;">
+            <form method="get" data-demo-form style="max-width: 600px; margin: 0 auto; padding: 2rem;">
                 <div class="form-group" style="margin-bottom: 1.5rem;">
                     <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name</label>
                     <input type="text" placeholder="Your full name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
@@ -70,9 +66,9 @@
             <hr style="margin: 2rem 0; border: none; border-bottom: 1px solid #eee;">
 
             <h3 style="margin-bottom: 1rem;">Security Settings</h3>
-            <p style="color: #666; margin-bottom: 1rem;">Change your password or enable two-factor authentication for added security.</p>
+            <p style="color: #666; margin-bottom: 1rem;">This preview has no account security service. Do not enter real passwords.</p>
             
-            <form action="/change-password" method="POST" style="max-width: 600px; margin: 0 auto;">
+            <form method="get" data-demo-form style="max-width: 600px; margin: 0 auto;">
                 <div class="form-group" style="margin-bottom: 1.5rem;">
                     <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Current Password</label>
                     <input type="password" placeholder="Enter current password" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
@@ -95,30 +91,6 @@
             <p>&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Top bar currency toggle
-        const currencySpans = document.querySelectorAll('.top-bar-right span');
-        currencySpans.forEach(span => {
-            span.style.cursor = 'pointer';
-            span.style.marginLeft = '1rem';
-            span.style.transition = 'color 0.3s';
-            span.addEventListener('mouseover', function() {
-                this.style.color = 'var(--accent-color)';
-            });
-            span.addEventListener('mouseout', function() {
-                this.style.color = '';
-            });
-        });
-    </script>
+    <script src="../js/portal.js" defer></script>
 </body>
+</html>

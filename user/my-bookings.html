@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <title>My Bookings - VIP Numbers</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal.css">
 </head>
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="top-bar-left">
-            <i class="fas fa-phone-volume"></i> VIP Numbers Shop - Premium Fancy Numbers
+        <div class="top-bar-left"> VIP Numbers Shop - Premium Fancy Numbers
         </div>
-        <div class="top-bar-right">
-            <span>🇧🇩 BDT</span>
-            <span>🇮🇳 ₹</span>
-            <span>💳 UPI</span>
-        </div>
+        <div class="top-bar-right"><span>STATIC DEMO · SAMPLE DATA</span></div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar user-nav">
-        <div class="logo">
-            <i class="fas fa-phone-volume"></i> VIP Numbers
-        </div>
+        <a class="logo" href="../index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="user/dashboard.html">Dashboard</a></li>
-            <li><a href="user/browse.html">Browse Numbers</a></li>
-            <li><a href="user/profile.html">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="browse.html">Browse Numbers</a></li>
+            <li><a href="profile.html">Profile</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="user/logout.html" class="btn-login">Logout</a>
+            <a href="login.html" class="btn-login">Sign in</a>
         </div>
     </nav>
 
@@ -40,8 +37,7 @@
         <div class="dashboard">
             <h2>My Active Bookings</h2>
             
-            <div class="flash-message success" style="background: #d4edda; border-color: #c3e6cb;">
-                <i class="fas fa-history"></i> Your purchased VIP numbers and booking details
+            <div class="flash-message success" style="background: #d4edda; border-color: #c3e6cb;"> Sample bookings for layout preview. These are not linked to an account.
             </div>
 
             <section class="book-summary" style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
@@ -85,7 +81,7 @@
                                 <span style="background: #d4edda; color: #155724; padding: 3px 6px; border-radius: 3px; font-size: 0.75rem;">Active</span>
                             </td>
                             <td style="padding: 1rem;">
-                                <a href="user/renew-booking.html?bid=BK20261001" class="btn-small btn-primary" style="padding: 4px 8px; font-size: 0.75rem;">Renew</a>
+                                <span class="disabled-action" aria-disabled="true">Renewal unavailable in demo</span>
                             </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #eee;">
@@ -99,7 +95,7 @@
                                 <span style="background: #d4edda; color: #155724; padding: 3px 6px; border-radius: 3px; font-size: 0.75rem;">Active</span>
                             </td>
                             <td style="padding: 1rem;">
-                                <a href="user/renew-booking.html?bid=BK20260987" class="btn-small btn-primary" style="padding: 4px 8px; font-size: 0.75rem;">Renew</a>
+                                <span class="disabled-action" aria-disabled="true">Renewal unavailable in demo</span>
                             </td>
                         </tr>
                     </tbody>
@@ -107,7 +103,7 @@
             </section>
 
             <div style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
-                <p>No active bookings found. <a href="user/browse.html" style="color: var(--accent-color);">Browse numbers</a> to book your first VIP number.</p>
+                <p>Sample booking records are shown above. No live bookings are stored on this demo site.</p>
             </div>
         </div>
     </main>
@@ -117,31 +113,6 @@
             <p>&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Top bar currency toggle
-        const currencySpans = document.querySelectorAll('.top-bar-right span');
-        currencySpans.forEach(span => {
-            span.style.cursor = 'pointer';
-            span.style.marginLeft = '1rem';
-            span.style.transition = 'color 0.3s';
-            span.addEventListener('mouseover', function() {
-                this.style.color = 'var(--accent-color)';
-            });
-            span.addEventListener('mouseout', function() {
-                this.style.color = '';
-            });
-        });
-    </script>
+    <script src="../js/portal.js" defer></script>
 </body>
 </html>

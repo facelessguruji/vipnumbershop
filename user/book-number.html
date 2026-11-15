@@ -3,34 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <title>Book Number - VIP Numbers</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal.css">
 </head>
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="top-bar-left">
-            <i class="fas fa-phone-volume"></i> VIP Numbers Shop - Premium Fancy Numbers
+        <div class="top-bar-left"> VIP Numbers Shop - Premium Fancy Numbers
         </div>
-        <div class="top-bar-right">
-            <span>🇧🇩 BDT</span>
-            <span>🇮🇳 ₹</span>
-            <span>💳 UPI</span>
-        </div>
+        <div class="top-bar-right"><span>STATIC DEMO · SAMPLE DATA</span></div>
     </div>
 
     <nav class="navbar user-nav">
-        <div class="logo">
-            <i class="fas fa-phone-volume"></i> VIP Numbers
-        </div>
+        <a class="logo" href="../index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="user/dashboard.html">Dashboard</a></li>
-            <li><a href="user/browse.html">Browse Numbers</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="browse.html">Browse Numbers</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="user/logout.html" class="btn-login">Logout</a>
+            <a href="login.html" class="btn-login">Sign in</a>
         </div>
     </nav>
 
@@ -39,10 +36,10 @@
             <h2>Book a VIP Number</h2>
             
             <div class="flash-message success">
-                <i class="fas fa-shopping-basket"></i> Select your desired number and proceed to booking
+                    Select a sample number and review the booking preview. This demo cannot submit an order.
             </div>
 
-            <form action="/book-number" method="POST" style="max-width: 800px; margin: 0 auto;">
+            <form method="get" data-demo-form style="max-width: 800px; margin: 0 auto;">
                 
                 <div class="form-group">
                     <label>Select Number Category</label>
@@ -51,7 +48,6 @@
                         <option value="premium-gold">Premium Gold</option>
                         <option value="silver-elite">Silver Elite</option>
                         <option value="bronze-class">Bronze Class</option>
-                        <option value="special">Special Collection</option>
                     </select>
                 </div>
                 
@@ -60,38 +56,28 @@
                 </div>
 
                 <div class="form-group" style="margin-top: 2rem;">
-                    <label>Your Preferred Number Pattern</label>
-                    <input type="text" placeholder="e.g., 98765, 4444, etc.">
+                    <label for="preferred-number">Selected number or pattern</label>
+                    <input id="preferred-number" type="text" placeholder="e.g., 98765, 4444, etc." autocomplete="off">
                 </div>
 
                 <div class="form-group" style="margin-top: 2rem;">
-                    <label>Contact Number</label>
-                    <input type="tel" placeholder="+91 XXXXXXXXXX" required>
+                    <label for="contact-number">Contact number</label>
+                    <input id="contact-number" type="tel" placeholder="+91 XXXXXXXXXX" autocomplete="tel" required>
                 </div>
 
                 <div class="form-group" style="margin-top: 2rem;">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="your.email@example.com" required>
+                    <label for="contact-email">Email address</label>
+                    <input id="contact-email" type="email" placeholder="you@example.com" autocomplete="email" required>
                 </div>
 
                 <div class="form-group" style="margin-top: 2rem;">
-                    <label>Payment Method</label>
-                    <select style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
-                        <option>UPI / QR Code</option>
-                        <option>Net Banking</option>
-                        <option>Card Payment</option>
-                        <option>Wallet</option>
+                    <label for="payment-method">Payment method</label>
+                    <select id="payment-method" disabled style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
+                        <option>Unavailable in this preview</option>
                     </select>
                 </div>
 
-                <div id="qr-payment-section" style="margin-top: 2rem; display: none;">
-                    <h4>UPI / QR Payment</h4>
-                    <p>Scan the QR code or enter UPI ID to complete payment</p>
-                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; margin-top: 0.5rem;">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=VIPNUMBER&size=200x200" alt="Payment QR Code" style="max-width: 150px; margin: 0 auto; display: block;">
-                        <p>Or enter UPI ID: <code>vipnumbers@upi</code></p>
-                    </div>
-                </div>
+                <p id="qr-payment-section" class="demo-disclaimer">Payment is not configured in this preview. Do not send money or enter payment details.</p>
 
                 <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 2rem;">
                     Continue
@@ -113,7 +99,7 @@
         const selectedNumber = bookingParams.get('number');
         const selectedCategory = bookingParams.get('category');
         const categorySelect = document.getElementById('number-category');
-        const patternInput = document.querySelector('input[placeholder^="e.g., 98765"]');
+        const patternInput = document.getElementById('preferred-number');
         if (selectedNumber && patternInput) patternInput.value = selectedNumber;
         if (selectedCategory && categorySelect) {
             categorySelect.value = selectedCategory;
@@ -125,26 +111,13 @@
             if (notice) notice.style.display = 'block';
         });
 
-        // Show QR payment section
-        const paymentSelect = document.querySelector('select[style*="width: 100%"]');
-        if (paymentSelect) {
-            paymentSelect.addEventListener('change', function() {
-                const qrSection = document.getElementById('qr-payment-section');
-                if (this.value === 'UPI / QR Code') {
-                    qrSection.style.display = 'block';
-                } else {
-                    qrSection.style.display = 'none';
-                }
-            });
-        }
-        
         // Display the sample listing for the selected category.
         function loadNumbers(category) {
             const list = document.getElementById('numbers-list');
             const listings = {
                 'premium-gold': { number: '+91 98765 43210', name: 'Premium Gold', price: '₹99,999' },
                 'silver-elite': { number: '+91 87654 32109', name: 'Silver Elite', price: '₹49,999' },
-                'bronze-class': { number: '+91 76543 21098', name: 'Bronze Class', price: '₹24,999' }
+            'bronze-class': { number: '+91 76543 21098', name: 'Bronze Class', price: '₹24,999' }
             };
             const listing = listings[category];
             if (!listing) {
@@ -154,4 +127,6 @@
             list.innerHTML = `<div class="number-item" style="border: none; padding: 1rem; text-align: left;"><span>${listing.number}</span><h4>${listing.name}</h4><p>${listing.price}</p></div>`;
         }
     </script>
+    <script src="../js/portal.js" defer></script>
 </body>
+</html>

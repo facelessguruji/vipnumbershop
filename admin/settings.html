@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <title>Settings - VIP Numbers Admin</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal.css">
 </head>
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="top-bar-left">
-            <i class="fas fa-shield-alt"></i> VIP Numbers Admin Panel
+        <div class="top-bar-left"> VIP Numbers Admin Panel
         </div>
-        <div class="top-bar-right">
-            <span>🇧🇩 BDT</span>
-            <span>🇮🇳 ₹</span>
-            <span>💳 UPI</span>
-        </div>
+        <div class="top-bar-right"><span>ADMIN PREVIEW · SAMPLE DATA</span></div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar admin-nav">
-        <div class="logo">
-            <i class="fas fa-shield-alt"></i> VIP Numbers Admin
-        </div>
+        <a class="logo" href="../index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a>
         <ul class="nav-links">
-            <li><a href="admin/dashboard.html">Dashboard</a></li>
-            <li><a href="admin/users.html">Users</a></li>
-            <li><a href="admin/bookings.html">Bookings</a></li>
-            <li><a href="admin/settings.html">Settings</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="bookings.html">Bookings</a></li>
+            <li><a href="settings.html">Settings</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="admin/logout.html" class="btn-login">Logout</a>
+            <a href="login.html" class="btn-login">Admin sign in</a>
         </div>
     </nav>
 
@@ -40,8 +38,7 @@
         <div class="dashboard">
             <h2>System Settings</h2>
             
-            <div class="flash-message success">
-                <i class="fas fa-cog"></i> Configure system preferences
+            <div class="flash-message success"> Settings preview. Changes are not connected to a live service.
             </div>
 
             <section class="settings-cards">
@@ -57,7 +54,7 @@
                     <h3>QR Code / UPI Integration</h3>
                     <p>Upload UPI QR code for payments. Supported formats: PNG, JPG, SVG</p>
                     
-                    <form id="qr-upload-form" style="margin-top: 1rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <form id="qr-upload-form" style="margin-top: 1rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-demo-form>
                         <div class="form-group" style="margin-bottom: 1rem;">
                             <label>Upload UPI QR Code</label>
                             <input type="file" accept="image/png, image/jpeg, image/svg+xml" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
@@ -88,7 +85,7 @@
                 </div>
                 <div class="card" style="padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <h3>Security Settings</h3>
-                    <p>Two-Factor Authentication: <span style="color: #28a745;">Enabled</span></p>
+                    <p>Two-Factor Authentication: <span>Not configured in this preview</span></p>
                     <button class="btn-secondary" style="width: 100%; margin-top: 0.5rem;">Update Security</button>
                 </div>
             </section>
@@ -121,29 +118,7 @@
                 reader.readAsDataURL(file);
             }
         });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Top bar currency toggle
-        const currencySpans = document.querySelectorAll('.top-bar-right span');
-        currencySpans.forEach(span => {
-            span.style.cursor = 'pointer';
-            span.style.marginLeft = '1rem';
-            span.style.transition = 'color 0.3s';
-            span.addEventListener('mouseover', function() {
-                this.style.color = 'var(--accent-color)';
-            });
-            span.addEventListener('mouseout', function() {
-                this.style.color = '';
-            });
-        });
     </script>
+    <script src="../js/portal.js" defer></script>
 </body>
+</html>

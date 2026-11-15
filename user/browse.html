@@ -1,99 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Numbers - VIP Numbers</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b1a">
+  <title>Browse Numbers — VIP Numbers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/portal.css">
+  <script src="../js/portal.js" defer></script>
 </head>
 <body>
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <i class="fas fa-phone-volume"></i> VIP Numbers Shop - Premium Fancy Numbers
-        </div>
-        <div class="top-bar-right">
-            <span>🇧🇩 BDT</span>
-            <span>🇮🇳 ₹</span>
-            <span>💳 UPI</span>
-        </div>
-    </div>
-
-    <nav class="navbar user-nav">
-        <div class="logo">
-            <i class="fas fa-phone-volume"></i> VIP Numbers
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="user/dashboard.html">Dashboard</a></li>
-            <li><a href="user/my-bookings.html">My Bookings</a></li>
-            <li><a href="user/profile.html">Profile</a></li>
-        </ul>
-        <div class="nav-actions">
-            <a href="user/logout.html" class="btn-login">Logout</a>
-        </div>
-    </nav>
-
-    <main class="user-section">
-        <div class="dashboard">
-            <h2>Browse VIP Numbers</h2>
-            
-            <div class="flash-message success">
-                <i class="fas fa-search"></i> Use the filters below to find your perfect fancy number
-            </div>
-
-            <section class="filter-bar" style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                <div class="form-group" style="margin-bottom: 1rem;">
-                    <select style="width: 300px; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-                        <option>All Categories</option>
-                        <option>Premium Gold</option>
-                        <option>Silver Elite</option>
-                        <option>Bronze Class</option>
-                        <option>Special Collection</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin-bottom: 1rem;">
-                    <input type="text" placeholder="Search by number pattern..." style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-                </div>
-                <button class="btn-primary" style="padding: 8px 16px; font-size: 0.875rem;">Apply Filters</button>
-            </section>
-
-            <section class="number-grid" style="margin: 1rem 0;">
-                <p style="text-align: center; color: #666;;">No numbers found. Try adjusting your search filters or browse all categories.</p>
-            </section>
-        </div>
-    </main>
-
-    <footer style="margin-top: 0;">
-        <div style="background: var(--primary-color); color: white; padding: 2rem; text-align: center;">
-            <p>&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Top bar currency toggle
-        const currencySpans = document.querySelectorAll('.top-bar-right span');
-        currencySpans.forEach(span => {
-            span.style.cursor = 'pointer';
-            span.style.marginLeft = '1rem';
-            span.style.transition = 'color 0.3s';
-            span.addEventListener('mouseover', function() {
-                this.style.color = 'var(--accent-color)';
-            });
-            span.addEventListener('mouseout', function() {
-                this.style.color = '';
-            });
-        });
-    </script>
+  <div class="top-bar"><div class="top-bar-left">VIP NUMBERS · THE COLLECTION</div><div class="top-bar-right"><span>STATIC DEMO · SAMPLE LISTINGS</span></div></div>
+  <header class="navbar user-nav">
+    <a class="logo" href="../index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a>
+    <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="browse.html" aria-current="page">Browse numbers</a></li><li><a href="my-bookings.html">My bookings</a></li><li><a href="profile.html">Profile</a></li></ul></nav>
+    <div class="nav-actions"><a class="btn-login" href="login.html">Sign in</a></div>
+  </header>
+  <main class="user-section">
+    <div class="page-intro"><p class="eyebrow"><span></span> A CURATED SAMPLE</p><h1>Find your <em>pattern.</em></h1><p>Explore the example listings, search for a digit pattern, and review a number before opening its booking preview.</p></div>
+    <section class="catalog-panel" aria-label="Search the number catalogue">
+      <div class="catalog-tools">
+        <label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Search number pattern</span><input id="catalog-search" type="search" placeholder="Try 98765 or 43210" autocomplete="off"><kbd>/</kbd></label>
+        <label class="select-field"><span class="sr-only">Filter by collection</span><select id="catalog-category"><option value="all">All collections</option><option value="premium-gold">Signature</option><option value="silver-elite">Elite</option><option value="bronze-class">Classic</option><option value="special">Special</option></select></label>
+        <button class="button catalog-search-button" id="catalog-clear" type="button">Clear filters</button>
+      </div>
+      <p class="catalog-count" id="catalog-count" aria-live="polite">Showing 3 sample numbers</p>
+    </section>
+    <section class="catalog-grid" id="catalog-grid" aria-label="Number listings" aria-live="polite">
+      <article class="catalog-card" data-number-card data-category="premium-gold" data-number="9876543210"><div class="catalog-card-top"><span class="catalog-tier tier-gold">SIGNATURE · GOLD</span><span class="catalog-mark" aria-hidden="true">✦</span></div><p class="catalog-number">+91 98765 <b>43210</b></p><p class="catalog-pattern">A smooth descending sequence</p><div class="catalog-card-bottom"><p>₹99,999<span>listed price · sample</span></p><a href="book-number.html?number=%2B91%2098765%2043210&category=premium-gold">View number <span aria-hidden="true">↗</span></a></div></article>
+      <article class="catalog-card" data-number-card data-category="silver-elite" data-number="8765432109"><div class="catalog-card-top"><span class="catalog-tier tier-silver">ELITE · SILVER</span><span class="catalog-mark" aria-hidden="true">✧</span></div><p class="catalog-number">+91 87654 <b>32109</b></p><p class="catalog-pattern">A smooth descending sequence</p><div class="catalog-card-bottom"><p>₹49,999<span>listed price · sample</span></p><a href="book-number.html?number=%2B91%2087654%2032109&category=silver-elite">View number <span aria-hidden="true">↗</span></a></div></article>
+      <article class="catalog-card" data-number-card data-category="bronze-class" data-number="7654321098"><div class="catalog-card-top"><span class="catalog-tier tier-bronze">CLASSIC · BRONZE</span><span class="catalog-mark" aria-hidden="true">✳</span></div><p class="catalog-number">+91 76543 <b>21098</b></p><p class="catalog-pattern">A smooth descending sequence</p><div class="catalog-card-bottom"><p>₹24,999<span>listed price · sample</span></p><a href="book-number.html?number=%2B91%2076543%2021098&category=bronze-class">View number <span aria-hidden="true">↗</span></a></div></article>
+      <p class="catalog-empty" id="catalog-empty" hidden>No sample numbers match those filters. Try another pattern or clear your filters.</p>
+    </section>
+    <p class="demo-disclaimer"><strong>Demo catalogue.</strong> These are sample listings only. Availability and listed prices are not verified here, and this site cannot complete bookings or payments.</p>
+  </main>
+  <footer class="site-footer"><a class="logo" href="../index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a><nav aria-label="Footer navigation"><a href="../index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav><span>© 2026 VIP Numbers Shop</span></footer>
 </body>
+</html>
