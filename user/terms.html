@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - VIP Numbers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <i class="fas fa-phone-volume"></i> VIP Numbers Shop - Premium Fancy Numbers
+        </div>
+        <div class="top-bar-right">
+            <span>🇧🇩 BDT</span>
+            <span>🇮🇳 ₹</span>
+            <span>💳 UPI</span>
+        </div>
+    </div>
+
+    <main class="user-section">
+        <div class="dashboard" style="max-width: 800px; margin: 0 auto; padding: 3rem 2rem; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Terms of Service</h2>
+            
+            <div style="line-height: 1.8; margin-bottom: 2rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">1. Acceptance of Terms</h3>
+                <p>By accessing the VIP Numbers website (the "Site"), operated by VIP Numbers Shop, you agree to comply with these Terms of Service. These terms apply to all visitors, users, and others who access or use the Site.</p>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; margin-top: 2rem;">2. Use of the Service</h3>
+                <p>The Service is intended for use by individuals who are at least 18 years old or the age of majority in their jurisdiction of residence. By using the Service, you represent and warrant that you are at least 18 years old.</p>
+                <p>You agree not to use the Service for any illegal purpose or in any manner that violates these Terms.</p>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; margin-top: 2rem;">3. Booking and Payments</h3>
+                <p>All bookings made through the Site are subject to availability. Prices are subject to change without notice. We reserve the right to modify or discontinue any aspect of the Service at any time.</p>
+                <p>Payment for bookings must be completed at the time of booking. We accept various payment methods including UPI, QR codes, net banking, and card payments.</p>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; margin-top: 2rem;">4. User Accounts</h3>
+                <p>When you create an account, you must provide accurate, complete, and up-to-date information. You are responsible for maintaining the security of your account and password. You agree to accept responsibility for all activities that occur under your account.</p>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; margin-top: 2rem;">5. Intellectual Property</h3>
+                <p>The original content, features, functionality, and other material on the Site are owned by VIP Numbers Shop and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem; margin-top: 2rem;">6. Limitation of Liability</h3>
+                <p>VIP Numbers Shop shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation loss of profits, data, use, or other intangible losses, resulting from your access to or use of the Service.</p>
+            </div>
+
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid #eee; text-align: center;">
+                <p style="font-size: 0.875rem; color: #666;">&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 0;">
+        <div style="background: var(--primary-color); color: white; padding: 2rem; text-align: center;">
+            <p>&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Top bar currency toggle
+        const currencySpans = document.querySelectorAll('.top-bar-right span');
+        currencySpans.forEach(span => {
+            span.style.cursor = 'pointer';
+            span.style.marginLeft = '1rem';
+            span.style.transition = 'color 0.3s';
+            span.addEventListener('mouseover', function() {
+                this.style.color = 'var(--accent-color)';
+            });
+            span.addEventListener('mouseout', function() {
+                this.style.color = '';
+            });
+        });
+    </script>
+</body>

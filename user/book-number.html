@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Number - VIP Numbers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <i class="fas fa-phone-volume"></i> VIP Numbers Shop - Premium Fancy Numbers
+        </div>
+        <div class="top-bar-right">
+            <span>🇧🇩 BDT</span>
+            <span>🇮🇳 ₹</span>
+            <span>💳 UPI</span>
+        </div>
+    </div>
+
+    <nav class="navbar user-nav">
+        <div class="logo">
+            <i class="fas fa-phone-volume"></i> VIP Numbers
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="user/dashboard.html">Dashboard</a></li>
+            <li><a href="user/browse.html">Browse Numbers</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="user/logout.html" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <main class="user-section">
+        <div class="dashboard">
+            <h2>Book a VIP Number</h2>
+            
+            <div class="flash-message success">
+                <i class="fas fa-shopping-basket"></i> Select your desired number and proceed to booking
+            </div>
+
+            <form action="/book-number" method="POST" style="max-width: 800px; margin: 0 auto;">
+                
+                <div class="form-group">
+                    <label>Select Number Category</label>
+                    <select onchange="loadNumbers(this.value)">
+                        <option value="">-- Select Category --</option>
+                        <option value="premium-gold">Premium Gold</option>
+                        <option value="silver-elite">Silver Elite</option>
+                        <option value="bronze-class">Bronze Class</option>
+                        <option value="special">Special Collection</option>
+                    </select>
+                </div>
+                
+                <div id="numbers-list">
+                    <p>Select a category to view available numbers</p>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Your Preferred Number Pattern</label>
+                    <input type="text" placeholder="e.g., 98765, 4444, etc.">
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Contact Number</label>
+                    <input type="tel" placeholder="+91 XXXXXXXXXX" required>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Payment Method</label>
+                    <select style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
+                        <option>UPI / QR Code</option>
+                        <option>Net Banking</option>
+                        <option>Card Payment</option>
+                        <option>Wallet</option>
+                    </select>
+                </div>
+
+                <div id="qr-payment-section" style="margin-top: 2rem; display: none;">
+                    <h4>UPI / QR Payment</h4>
+                    <p>Scan the QR code or enter UPI ID to complete payment</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; margin-top: 0.5rem;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=VIPNUMBER&size=200x200" alt="Payment QR Code" style="max-width: 150px; margin: 0 auto; display: block;">
+                        <p>Or enter UPI ID: <code>vipnumbers@upi</code></p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 2rem;">
+                    Proceed to Booking
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer style="margin-top: 0;">
+        <div style="background: var(--primary-color); color: white; padding: 2rem; text-align: center;">
+            <p>&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Show QR payment section
+        const paymentSelect = document.querySelector('select[style*="width: 100%"]');
+        if (paymentSelect) {
+            paymentSelect.addEventListener('change', function() {
+                const qrSection = document.getElementById('qr-payment-section');
+                if (this.value === 'UPI / QR Code') {
+                    qrSection.style.display = 'block';
+                } else {
+                    qrSection.style.display = 'none';
+                }
+            });
+        }
+        
+        // Simulate number loading
+        function loadNumbers(category) {
+            const list = document.getElementById('numbers-list');
+            if (category) {
+                list.innerHTML = `<p>Loading numbers for ${category}... <i class="fas fa-spinner fa-spin" style="font-size: 1rem;"></i></p>`;
+                setTimeout(() => {
+                    list.innerHTML = `
+                        <div class="number-item" style="border: none; padding: 1rem; text-align: left;">
+                            <span>+91 98765 43210</span>
+                            <h4>Premium Gold</h4>
+                            <p>₹99,999</p>
+                        </div>
+                    `;
+                }, 500);
+            } else {
+                list.innerHTML = '<p>Select a category to view available numbers</p>';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const prevCategory = localStorage.getItem('lastCategory');
+            if (prevCategory) {
+                loadNumbers(prevCategory);
+            }
+        });
+    </script>
+</body>

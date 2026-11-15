@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - VIP Numbers Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <i class="fas fa-shield-alt"></i> VIP Numbers Admin Panel
+        </div>
+        <div class="top-bar-right">
+            <span>🇧🇩 BDT</span>
+            <span>🇮🇳 ₹</span>
+            <span>💳 UPI</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar admin-nav">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i> VIP Numbers Admin
+        </div>
+        <ul class="nav-links">
+            <li><a href="admin/dashboard.html">Dashboard</a></li>
+            <li><a href="admin/users.html">Users</a></li>
+            <li><a href="admin/bookings.html">Bookings</a></li>
+            <li><a href="admin/settings.html">Settings</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="admin/logout.html" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <main class="admin-section">
+        <div class="dashboard">
+            <h2>System Settings</h2>
+            
+            <div class="flash-message success">
+                <i class="fas fa-cog"></i> Configure system preferences
+            </div>
+
+            <section class="settings-cards">
+                <div class="card" style="padding: 1.5rem; margin-bottom: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <h3>Payment Gateway</h3>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; margin-top: 0.5rem;">
+                        <p><strong>Current Status:</strong> <span id="gateway-status" style="color: #6c757d;">Demo mode (pending configuration)</span></p>
+                        <p><strong>Selected Method:</strong> <span id="gateway-method" style="color: #6c757d;">UPI / QR Code</span></p>
+                        <button class="btn-secondary" style="width: 100%; margin-top: 0.5rem; padding: 8px 16px;">Configure Payment Gateway</button>
+                    </div>
+                </div>
+                <div class="card" style="padding: 1.5rem; margin-bottom: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <h3>QR Code / UPI Integration</h3>
+                    <p>Upload UPI QR code for payments. Supported formats: PNG, JPG, SVG</p>
+                    
+                    <form id="qr-upload-form" style="margin-top: 1rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label>Upload UPI QR Code</label>
+                            <input type="file" accept="image/png, image/jpeg, image/svg+xml" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 10px;">Upload QR Code</button>
+                    </form>
+                    
+                    <div id="qr-preview" style="margin-top: 1rem; display: none; max-width: 200px; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h4 style="margin-bottom: 0.5rem;">QR Code Preview</h4>
+                        <img id="qr-image" src="" alt="QR Code Preview" style="max-width: 100%; border-radius: 5px; margin-bottom: 0.5rem;">
+                        <p style="font-size: 0.75rem; color: #666; text-align: center;">QR code will appear here after upload</p>
+                    </div>
+                    
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: #6c757d;;">
+                        Upload a UPI QR code image to enable QR-based payments. 
+                        Users can scan this code to make payments via PhonePe, Google Pay, Paytm, etc.
+                    </p>
+                </div>
+                <div class="card" style="padding: 1.5rem; margin-bottom: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <h3>Affiliate Program</h3>
+                    <p>Current status: <span style="color: #6c757d;">Not configured</span></p>
+                    <button class="btn-secondary" style="width: 100%; margin-top: 0.5rem;">Set Up Affiliate System</button>
+                </div>
+                <div class="card" style="padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <h3>Email Notifications</h3>
+                    <p>Status: <span style="color: #28a745;">Enabled</span></p>
+                    <button class="btn-secondary" style="width: 100%; margin-top: 0.5rem;">Manage Templates</button>
+                </div>
+                <div class="card" style="padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <h3>Security Settings</h3>
+                    <p>Two-Factor Authentication: <span style="color: #28a745;">Enabled</span></p>
+                    <button class="btn-secondary" style="width: 100%; margin-top: 0.5rem;">Update Security</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer style="margin-top: 0;">
+        <div style="background: var(--primary-color); color: white; padding: 2rem; text-align: center;">
+            <p>&copy; 2026 VIP Numbers Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // QR Code Upload Preview
+        document.getElementById('qr-upload-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = this.querySelector('input[type="file"]');
+            const qrPreview = document.getElementById('qr-preview');
+            const qrImage = document.getElementById('qr-image');
+            
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    qrImage.src = e.target.result;
+                    qrPreview.style.display = 'block';
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Top bar currency toggle
+        const currencySpans = document.querySelectorAll('.top-bar-right span');
+        currencySpans.forEach(span => {
+            span.style.cursor = 'pointer';
+            span.style.marginLeft = '1rem';
+            span.style.transition = 'color 0.3s';
+            span.addEventListener('mouseover', function() {
+                this.style.color = 'var(--accent-color)';
+            });
+            span.addEventListener('mouseout', function() {
+                this.style.color = '';
+            });
+        });
+    </script>
+</body>
