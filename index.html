@@ -1,299 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Numbers Shop - Premium Fancy Numbers Bangladesh</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b1a">
+  <meta name="description" content="Find a memorable VIP number. Explore distinctive number patterns and start a booking request.">
+  <title>VIP Numbers — Make it memorable</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/landing.css">
+  <script src="js/landing.js" defer></script>
 </head>
 <body>
-    <!-- Neon Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <i class="fas fa-phone-volume"></i> VIP NUMBERS SHOP
-        </div>
-        <div class="top-bar-right">
-            <span>🇧🇩 BDT</span>
-            <span>🇮🇳 ₹</span>
-            <span>💳 UPI</span>
-        </div>
-    </div>
-
-    <!-- Overlay Background -->
-    <div class="overlay"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <i class="fas fa-phone-volume"></i> VIP NUMBERS
-        </div>
-        <ul class="nav-links">
-            <li><a href="#features" style="color: var(--accent-color);">Features</a></li>
-            <li><a href="#categories" style="color: var(--accent-color);">Categories</a></li>
-            <li><a href="user/dashboard.html">User Portal</a></li>
-            <li><a href="admin/dashboard.html">Admin Panel</a></li>
-        </ul>
-        <div class="nav-actions">
-            <a href="user/login.html" class="btn-login">Login</a>
-            <a href="user/register.html" class="btn-register">Register</a>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="VIP Numbers home"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+      <a href="#collection">Collection</a><a href="#how-it-works">How it works</a><a href="#questions">FAQs</a>
     </nav>
+    <div class="header-actions"><a class="sign-in" href="user/login.html">Sign in</a><a class="button button-small" href="user/browse.html">Browse numbers <span aria-hidden="true">↗</span></a></div>
+  </header>
 
-    <!-- Hero Section with Parallax Effect -->
+  <main id="main">
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Fancy Number <br>Booking Platform</h1>
-            <p>Get the most prestigious VIP numbers for your business or personal use. Premium collection with instant booking.</p>
-            <div class="hero-buttons">
-                <a href="user/dashboard.html" class="btn-primary">Get Started</a>
-                <a href="#categories" class="btn-secondary">Browse Numbers</a>
-            </div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A number that feels like you</p>
+        <h1>Make your<br>number <em>memorable.</em></h1>
+        <p class="hero-intro">Find a number with a little more meaning. Explore distinctive patterns, compare options, and take the next step when one feels right.</p>
+        <a class="button hero-cta" href="#collection">Explore the collection <span aria-hidden="true">↓</span></a>
+        <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span><span>Take your time. Find your pattern.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Featured memorable number, 98765 43210">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✧</div>
+        <div class="number-card">
+          <div class="card-topline"><span class="card-dot"></span><span>THE SIGNATURE SERIES</span><span class="card-star">✦</span></div>
+          <p class="card-country">INDIA <span>+91</span></p>
+          <p class="featured-number">98765 <b>43210</b></p>
+          <div class="card-rule"></div>
+          <div class="card-bottom"><span>Easy to remember.<br>Made to stand out.</span><span class="card-price">₹99,999<span>listed price</span></span></div>
         </div>
-        <div class="hero-image">
-            <div class="number-display">
-                <span>+91 98765 43210</span>
-            </div>
-            <i class="fas fa-phone-volume" style="font-size: 120px; color: #ffd700; position: absolute; bottom: -40px; right: -20px; animation: float 3s ease-in-out infinite;"></i>
-        </div>
+        <div class="art-caption"><span class="caption-line"></span>THE RIGHT DETAILS MAKE ALL THE DIFFERENCE</div>
+      </div>
+      <a class="scroll-cue" href="#collection" aria-label="Scroll to collection"><span></span>SCROLL TO DISCOVER</a>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="stat1">5000+</div>
-                    <div class="stat-label">Happy Customers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stat2">10000+</div>
-                    <div class="stat-label">VIP Numbers Sold</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stat3">₹15+</div>
-                    <div class="stat-label">Crore+ Revenue</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stat4">99.9%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-            </div>
-        </div>
+    <section class="trust-strip" aria-label="Shopping principles"><div><span>01</span> Browse at your own pace</div><div><span>02</span> Clear listed prices</div><div><span>03</span> Choose a number that fits</div></section>
+
+    <section class="collection section-wrap" id="collection">
+      <div class="section-heading"><div><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> FIND YOUR PATTERN</p><h2>A number with<br><em>your kind of rhythm.</em></h2></div><p class="section-description">Repeating digits. A smooth sequence. A pattern that’s easy to recall. Start with what catches your eye.</p></div>
+      <div class="collection-tools"><label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search number patterns</span><input id="number-search" type="search" placeholder="Try a pattern, like 777 or 123" autocomplete="off"><kbd>/</kbd></label><div class="filter-group" role="group" aria-label="Filter numbers by collection"><button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All numbers <span id="result-count">3</span></button><button class="filter-chip" type="button" data-filter="premium-gold" aria-pressed="false">Gold</button><button class="filter-chip" type="button" data-filter="silver-elite" aria-pressed="false">Silver</button><button class="filter-chip" type="button" data-filter="bronze-class" aria-pressed="false">Bronze</button></div></div>
+      <div class="number-grid" id="number-grid" aria-live="polite">
+        <article class="number-tile" data-category="premium-gold" data-number="9876543210"><div class="tile-top"><span class="tier tier-gold">SIGNATURE</span><button class="favorite" type="button" aria-label="Save 98765 43210" aria-pressed="false">♡</button></div><p class="tile-number">+91 98765 <b>43210</b></p><div class="tile-detail"><span>Descending sequence</span><span class="pattern-icon" aria-hidden="true">↘</span></div><div class="tile-footer"><div class="price">₹99,999<span>listed price</span></div><a class="tile-link" href="user/book-number.html?number=%2B91%2098765%2043210&category=premium-gold">View number <span aria-hidden="true">↗</span></a></div></article>
+        <article class="number-tile" data-category="silver-elite" data-number="8765432109"><div class="tile-top"><span class="tier tier-silver">ELITE</span><button class="favorite" type="button" aria-label="Save 87654 32109" aria-pressed="false">♡</button></div><p class="tile-number">+91 87654 <b>32109</b></p><div class="tile-detail"><span>Descending sequence</span><span class="pattern-icon" aria-hidden="true">↘</span></div><div class="tile-footer"><div class="price">₹49,999<span>listed price</span></div><a class="tile-link" href="user/book-number.html?number=%2B91%2087654%2032109&category=silver-elite">View number <span aria-hidden="true">↗</span></a></div></article>
+        <article class="number-tile" data-category="bronze-class" data-number="7654321098"><div class="tile-top"><span class="tier tier-bronze">CLASSIC</span><button class="favorite" type="button" aria-label="Save 76543 21098" aria-pressed="false">♡</button></div><p class="tile-number">+91 76543 <b>21098</b></p><div class="tile-detail"><span>Descending sequence</span><span class="pattern-icon" aria-hidden="true">↘</span></div><div class="tile-footer"><div class="price">₹24,999<span>listed price</span></div><a class="tile-link" href="user/book-number.html?number=%2B91%2076543%2021098&category=bronze-class">View number <span aria-hidden="true">↗</span></a></div></article>
+        <p class="empty-state" id="empty-state" hidden>No matching numbers yet. Try a different pattern or choose another collection.</p>
+      </div>
+      <div class="collection-bottom"><p>Showing <strong id="shown-count">3</strong> listed numbers</p><a class="text-link" href="user/browse.html">See all numbers <span aria-hidden="true">→</span></a></div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="categories-section">
-        <div class="container max-width">
-            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Number Categories</h2>
-            <div class="category-grid">
-                <div class="category-card" style="background: linear-gradient(135deg, #fee5eb, #ec4899); border: none;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">💎</div>
-                    <h3>Premium Gold</h3>
-                    <p>Ultra rare and exclusive numbers</p>
-                    <span style="color: white; background: #c5e1a5; padding: 5px 10px; border-radius: 20px; font-size: 0.875rem; margin: 0.5rem;">Starting ₹99,999</span>
-                    <a href="user/browse.html" style="color: white; text-decoration: none;">View Details</a>
-                </div>
-                <div class="category-card" style="background: linear-gradient(135deg, #e0f7fa, #0288d1); border: none;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🥈</div>
-                    <h3>Silver Elite</h3>
-                    <p>Exclusive and premium numbers</p>
-                    <span style="color: white; background: #636e72; padding: 5px 10px; border-radius: 20px; font-size: 0.875rem; margin: 0.5rem;">Starting ₹49,999</span>
-                    <a href="user/browse.html" style="color: white; text-decoration: none;">View Details</a>
-                </div>
-                <div class="category-card" style="background: linear-gradient(135deg, #fff3e0, #f6871f); border: none;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🥉</div>
-                    <h3>Bronze Class</h3>
-                    <p>Popular and sought-after numbers</p>
-                    <span style="color: white; background: #e0e0e0; padding: 5px 10px; border-radius: 20px; font-size: 0.875rem; margin: 0.5rem;">Starting ₹24,999</span>
-                    <a href="user/browse.html" style="color: white; text-decoration: none;">View Details</a>
-                </div>
-                <div class="category-card" style="background: linear-gradient(135deg, #f8f9fa, #6c757d); border: none;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">⭐</div>
-                    <h3>Special Collection</h3>
-                    <p>VIP combinations and patterns</p>
-                    <span style="color: white; background: #2d3436; padding: 5px 10px; border-radius: 20px; font-size: 0.875rem; margin: 0.5rem;">Starting ₹1,99,999</span>
-                    <a href="user/browse.html" style="color: white; text-decoration: none;">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="story-band" id="how-it-works"><div class="story-inner"><div class="story-title"><p class="eyebrow"><span class="eyebrow-line"></span> SIMPLE BY DESIGN</p><h2>Good choices<br>take <em>three steps.</em></h2></div><ol class="steps"><li><span class="step-no">01</span><div><h3>Explore patterns</h3><p>Search digits or browse by collection to find a style you like.</p></div></li><li><span class="step-no">02</span><div><h3>Check the details</h3><p>Review the number and its listed price before you continue.</p></div></li><li><span class="step-no">03</span><div><h3>Start a booking</h3><p>Send your selection through the booking form to get started.</p></div></li></ol></div></section>
 
-    <!-- Popular Numbers -->
-    <section class="popular-numbers" style="padding: 4rem 2rem; background: var(--bg-color);">
-        <div class="container max-width">
-            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">Popular VIP Numbers</h2>
-            <div class="number-grid">
-                <div class="number-item" style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 1.5rem; text-align: center; transition: box-shadow 0.3s;">
-                    <span style="display: block; font-size: 1.2rem; color: var(--accent-color); margin: 1rem 0; font-weight: bold;">+91 98765 43210</span>
-                    <h4>Premium Gold</h4>
-                    <p>₹99,999</p>
-                    <a href="user/book-number.html" class="btn-primary" style="width: 100%; padding: 8px; font-size: 0.875rem;">Book Now</a>
-                </div>
-                <div class="number-item" style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 1.5rem; text-align: center; transition: box-shadow 0.3s;">
-                    <span style="display: block; font-size: 1.2rem; color: var(--accent-color); margin: 1rem 0; font-weight: bold;">+91 87654 32109</span>
-                    <h4>Silver Elite</h4>
-                    <p>₹49,999</p>
-                    <a href="user/book-number.html" class="btn-primary" style="width: 100%; padding: 8px; font-size: 0.875rem;">Book Now</a>
-                </div>
-                <div class="number-item" style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 1.5rem; text-align: center; transition: box-shadow 0.3s;">
-                    <span style="display: block; font-size: 1.2rem; color: var(--accent-color); margin: 1rem 0; font-weight: bold;">+91 76543 21098</span>
-                    <h4>Bronze Class</h4>
-                    <p>₹24,999</p>
-                    <a href="user/book-number.html" class="btn-primary" style="width: 100%; padding: 8px; font-size: 0.875rem;">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="faq section-wrap" id="questions"><div class="faq-heading"><p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> A FEW THINGS TO KNOW</p><h2>Before you<br><em>choose your number.</em></h2></div><div class="faq-list"><details><summary>What makes a number a VIP number?<span aria-hidden="true">+</span></summary><p>VIP numbers use patterns that are easier to remember, such as repeating digits or a sequence. Browse the examples to see which style suits you.</p></details><details><summary>How do I request a number?<span aria-hidden="true">+</span></summary><p>Choose a number and select “View number” to open the booking form with your selection included.</p></details><details><summary>Are the prices final?<span aria-hidden="true">+</span></summary><p>The prices shown are the listed prices in this demo catalogue. Confirm availability and final terms with the shop before making a payment.</p></details></div></section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose" style="padding: 4rem 2rem; text-align: center; background: white;">
-        <div class="container max-width">
-            <h2 style="margin-bottom: 2rem; font-size: 2.5rem;">Why Choose VIP Numbers?</h2>
-            <div class="features-grid">
-                <div style="margin: 0 auto 2rem; max-width: 300px;">
-                    <i class="fas fa-search" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem; display: block;"></i>
-                    <h3>Extensive Collection</h3>
-                    <p>Access to 5000+ premium VIP numbers across all categories and price ranges.</p>
-                </div>
-                <div style="margin: 0 auto 2rem; max-width: 300px;">
-                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem; display: block;"></i>
-                    <h3>Secure Booking</h3>
-                    <p>End-to-end encrypted booking process with secure payment gateways and UPI integration.</p>
-                </div>
-                <div style="margin: 0 auto 2rem; max-width: 300px;">
-                    <i class="fas fa-user-friends" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem; display: block;"></i>
-                    <h3>Dedicated Support</h3>
-                    <p>24/7 customer support team ready to assist with number selection and booking queries.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="closing-cta"><div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT NUMBER STARTS HERE</p><h2>Find the one<br>you’ll <em>never forget.</em></h2></div><a class="button button-light" href="#collection">Explore numbers <span aria-hidden="true">↗</span></a></section>
+  </main>
 
-    <!-- CTA Section -->
-    <section class="cta-section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 6rem 2rem; text-align: center;">
-        <div class="container max-width">
-            <h2 style="font-size: 3rem; margin-bottom: 1rem;">Get Your Fancy Number Today</h2>
-            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem;">Join thousands of satisfied customers who have upgraded their identity with premium VIP numbers.</p>
-            <div style="display: inline-block; margin-top: 2rem;">
-                <a href="user/dashboard.html" class="btn-primary" style="padding: 12px 30px; font-size: 1.1rem;">Book Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background: var(--primary-color); color: rgba(255,255,255,0.7); padding: 3rem 2rem 1rem;">
-        <div class="container max-width">
-            <div class="footer-content">
-                <div class="logo-footer" style="margin-bottom: 1.5rem;">
-                    <i class="fas fa-phone-volume" style="font-size: 2rem; color: white; margin-bottom: 1rem; display: block;">VIP Numbers</i>
-                </div>
-                <p style="font-size: 0.875rem; line-height: 1.8; margin-bottom: 1rem;">Get the most prestigious VIP numbers for your business or personal use. Premium collection with instant booking.</p>
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;">
-                    <a href="#" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; transition: 0.3s;">Facebook</a>
-                    <a href="#" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; transition: 0.3s;">Instagram</a>
-                    <a href="#" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; transition: 0.3s;">Twitter</a>
-                    <a href="#" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; transition: 0.3s;">LinkedIn</a>
-                </div>
-            </div>
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); text-align: center;">
-                <p style="font-size: 0.875rem;">&copy; 2026 VIP Numbers Shop. All rights reserved. | Made with ❤️ in Bangladesh</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Parallax effect for hero
-        const heroBg = document.querySelector('.hero-bg');
-        const heroImage = document.querySelector('.hero-image');
-
-        window.addEventListener('scroll', () => {
-            const scrolly = window.pageYOffset;
-            if (heroBg) {
-                heroBg.style.transform = `translateY(${scrolly * 0.5}px)`;
-            }
-            if (heroImage) {
-                heroImage.style.transform = `translateY(${scrolly * 0.3}px)`;
-            }
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Intersection Observer for stats animation
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.id === 'stat1') entry.target.innerHTML = '5000+';
-                    if (entry.target.id === 'stat2') entry.target.innerHTML = '10000+';
-                    if (entry.target.id === 'stat3') entry.target.innerHTML = '₹15+';
-                    if (entry.target.id === 'stat4') entry.target.innerHTML = '99.9%';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
-
-        // Category card hover effect
-        document.querySelectorAll('.category-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = 'none';
-            });
-        });
-
-        // Number item hover effect
-        document.querySelectorAll('.number-item').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
-            });
-            item.addEventListener('mouseleave', () => {
-                item.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-            });
-        });
-
-        // Top bar currency toggle
-        const currencySpans = document.querySelectorAll('.top-bar-right span');
-        currencySpans.forEach(span => {
-            span.style.cursor = 'pointer';
-            span.style.marginLeft = '1rem';
-            span.style.transition = 'color 0.3s';
-            span.addEventListener('mouseover', function() {
-                this.style.color = 'var(--accent-color)';
-            });
-            span.addEventListener('mouseout', function() {
-                this.style.color = '';
-            });
-        });
-    </script>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">V</span><span>vip<span class="brand-light">numbers</span></span></a><p>Find a pattern that feels like you.</p><div class="footer-links"><a href="user/browse.html">Browse</a><a href="user/login.html">Sign in</a><a href="user/terms.html">Terms</a><a href="user/privacy.html">Privacy</a></div><span class="copyright">© 2026 VIP Numbers Shop</span></footer>
 </body>
+</html>

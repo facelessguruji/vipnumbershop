@@ -46,7 +46,7 @@
                 
                 <div class="form-group">
                     <label>Select Number Category</label>
-                    <select onchange="loadNumbers(this.value)">
+                    <select id="number-category" onchange="loadNumbers(this.value)">
                         <option value="">-- Select Category --</option>
                         <option value="premium-gold">Premium Gold</option>
                         <option value="silver-elite">Silver Elite</option>
@@ -94,8 +94,9 @@
                 </div>
 
                 <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 2rem;">
-                    Proceed to Booking
+                    Continue
                 </button>
+                <p id="booking-demo-notice" role="status" aria-live="polite" style="display: none; margin-top: 1rem; color: #6b6250; text-align: center;">This is a catalogue demo. Booking requests and payments are not submitted or processed here.</p>
             </form>
         </div>
     </main>
@@ -107,6 +108,23 @@
     </footer>
 
     <script>
+        // Read a selected number passed from the catalogue.
+        const bookingParams = new URLSearchParams(window.location.search);
+        const selectedNumber = bookingParams.get('number');
+        const selectedCategory = bookingParams.get('category');
+        const categorySelect = document.getElementById('number-category');
+        const patternInput = document.querySelector('input[placeholder^="e.g., 98765"]');
+        if (selectedNumber && patternInput) patternInput.value = selectedNumber;
+        if (selectedCategory && categorySelect) {
+            categorySelect.value = selectedCategory;
+            loadNumbers(selectedCategory);
+        }
+        document.querySelector('form')?.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const notice = document.getElementById('booking-demo-notice');
+            if (notice) notice.style.display = 'block';
+        });
+
         // Show QR payment section
         const paymentSelect = document.querySelector('select[style*="width: 100%"]');
         if (paymentSelect) {
@@ -120,30 +138,20 @@
             });
         }
         
-        // Simulate number loading
+        // Display the sample listing for the selected category.
         function loadNumbers(category) {
             const list = document.getElementById('numbers-list');
-            if (category) {
-                list.innerHTML = `<p>Loading numbers for ${category}... <i class="fas fa-spinner fa-spin" style="font-size: 1rem;"></i></p>`;
-                setTimeout(() => {
-                    list.innerHTML = `
-                        <div class="number-item" style="border: none; padding: 1rem; text-align: left;">
-                            <span>+91 98765 43210</span>
-                            <h4>Premium Gold</h4>
-                            <p>₹99,999</p>
-                        </div>
-                    `;
-                }, 500);
-            } else {
+            const listings = {
+                'premium-gold': { number: '+91 98765 43210', name: 'Premium Gold', price: '₹99,999' },
+                'silver-elite': { number: '+91 87654 32109', name: 'Silver Elite', price: '₹49,999' },
+                'bronze-class': { number: '+91 76543 21098', name: 'Bronze Class', price: '₹24,999' }
+            };
+            const listing = listings[category];
+            if (!listing) {
                 list.innerHTML = '<p>Select a category to view available numbers</p>';
+                return;
             }
+            list.innerHTML = `<div class="number-item" style="border: none; padding: 1rem; text-align: left;"><span>${listing.number}</span><h4>${listing.name}</h4><p>${listing.price}</p></div>`;
         }
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            const prevCategory = localStorage.getItem('lastCategory');
-            if (prevCategory) {
-                loadNumbers(prevCategory);
-            }
-        });
     </script>
 </body>
